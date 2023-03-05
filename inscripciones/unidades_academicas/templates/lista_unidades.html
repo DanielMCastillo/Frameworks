@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block titulo %}
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+<h1>Lista de unidades académicas</h1>
+<table width="100%">
+    <thead>
+        <tr>
+            <th>Clave</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for unidad in unidades %}
+            <tr>
+                <td>{{unidad.clave}}</td>
+                <td>{{unidad.nombre}}</td>
+                <td>{{unidad.direccion}}</td>
+
+                <td><a class= "btn btn-danger" href="{% url 'eliminar_unidad' unidad.clave %}">Eliminar</a></td>
+                <td><a class = "btn btn-success" href="{% url 'editar_unidad' unidad.clave %}">Editar</a></td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock contenido%}
+

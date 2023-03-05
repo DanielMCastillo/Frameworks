@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_num1">Numero 1:</label>
+            <input type="number" step="0.1" name="num1" id="id_num1" value="{{num1}}">
+        </p>
+        <p>
+            <label for="id_num2">Numero 2:</label>
+            <input type="number" step="0.1" name="num2" id="id_num2" value="{{num2}}">
+        </p>
+        <p>
+            <label for="id_res">Resultado:</label>
+            <input type="text" name="res" id="id_res" value="{{resultado}}">
+            
+        </p>
+        <input type="submit" value="Sumar" name="operacion">
+        <input type="submit" value="Restar" name="operacion">
+    </form>
+    
+    <table>
+        <tr>
+            <td colspan="4">0</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>+/-</td>
+            <td>%</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    table>(tr>td*4)*6
+</body>
+</html>
