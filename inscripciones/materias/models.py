@@ -24,7 +24,8 @@ class Materia(models.Model):
     optativa = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"(self.nombre)-(self.clave)" 
+        return f"{self.nombre}-{self.clave}"
+
         
 class MateriasPrecendentes(models.Model):
     materia = models.ForeignKey("materias.Materia", verbose_name = "Materia", on_delete = models.CASCADE, related_name = "materia_actual")

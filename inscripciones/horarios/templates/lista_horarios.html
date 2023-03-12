@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de Horarios
+{% endblock titulo %}
+    
+
+{% block contenido %}
+    <h1>Lista de Horarios</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Docente</th>
+                <th>Semestre</th>
+                <th>Dia</th>
+                <th>Hora</th>
+                <th>Salon</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for horario in horarios %}
+                <tr>
+                    <td>{{horario.materia}}</td>
+                    <td>{{horario.docente}}</td>
+                    <td>{{horario.semestre}}</td>
+                    <td>{{horario.dia}}</td>
+                    <td>{{horario.hora}}</td>
+                    <td>{{horario.salon}}</td>
+
+                    <td><a class= "btn btn-danger" href="{% url 'eliminar_horario' horario.clave %}">Eliminar</a></td>
+                    <td><a class = "btn btn-success" href="{% url 'editar_horario' horario.clave %}">Editar</a></td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
